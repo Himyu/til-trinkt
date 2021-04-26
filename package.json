@@ -7,6 +7,7 @@
     "serve": "vite preview"
   },
   "devDependencies": {
+    "@rollup/plugin-json": "^4.1.0",
     "@sveltejs/vite-plugin-svelte": "next",
     "sass": "^1.32.11",
     "svelte": "^3.37.0",
@@ -15,6 +16,8 @@
     "vite": "^2.1.5"
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "sveltestrap": "^3.14.1"
   }
 }

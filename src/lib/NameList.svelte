@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { Names } from "../store/Names";
+  import { Names, ShowNames } from "../store/Names";
 </script>
 
 <div>
-  {#each $Names as name}
-    <p>{name}</p>
-  {/each}
+  {#if $ShowNames}
+    {#each $Names as name}
+      <p>{name}</p>
+    {/each}
+  {/if}
 </div>

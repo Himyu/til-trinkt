@@ -1,12 +1,8 @@
 <script lang="ts">
   import { Names } from "../store/Names";
-  import {
-    Button,
-    Input,
-    InputGroup,
-    InputGroupText,
-    InputGroupAddon,
-  } from "sveltestrap";
+  import Icon from "./Icon.svelte";
+  import { Input, InputGroup, InputGroupAddon, Button } from "sveltestrap";
+  import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
   let value: string = "";
 
@@ -23,23 +19,14 @@
   }
 </script>
 
-<div>
-  <form on:submit={addName} class="p-4">
-    <InputGroup class="mb-3">
-      <Input type="text" bind:value placeholder="Name ..." required />
-      <InputGroupAddon addonType="append">
-        <InputGroupText class="addBtn">
-          <Input addon type="submit" value="+" />
-        </InputGroupText>
-      </InputGroupAddon>
-    </InputGroup>
-  </form>
-</div>
-
-<style lang="scss" global>
-  .addBtn {
-    background-color: var(--success);
-    border-color: var(--success);
-    color: var(--white);
-  }
-</style>
+<h4 class="text-center mb-3">Gib einen Namen ein</h4>
+<form on:submit={addName} class="mb-3">
+  <InputGroup>
+    <Input type="text" bind:value placeholder="Name ..." required />
+    <InputGroupAddon addonType="append">
+      <Button size="sm" color="success" id="addBtn" class="input-group-text">
+        <Icon icon={faPlus} size="12px" />
+      </Button>
+    </InputGroupAddon>
+  </InputGroup>
+</form>

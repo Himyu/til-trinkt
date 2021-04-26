@@ -1,30 +1,24 @@
 <script lang="ts">
-  import Menu from "./lib/Menu.svelte";
+  import Header from "./lib/Header.svelte";
+  import Alert from "./lib/Alert.svelte";
   import NameList from "./lib/NameList.svelte";
   import Input from "./lib/Input.svelte";
   import CurrentPick from "./lib/CurrentPick.svelte";
   import Generator from "./lib/Generator.svelte";
   import Chronic from "./lib/Chronic.svelte";
   import Footer from "./lib/Footer.svelte";
+  import { Chronic as ChronicStore } from "./store/Chronic";
 </script>
 
-<main>
-  <Menu />
+<Header />
+<Alert />
+<main class="p-4 text-white flex-grow-1 d-flex flex-column h-100">
   <NameList />
-  <Input />
-  <CurrentPick />
-  <Generator />
+  <div class={$ChronicStore.length < 1 ? "flex my-auto" : ""}>
+    <Input />
+    <CurrentPick />
+    <Generator />
+  </div>
   <Chronic />
-  <Footer />
 </main>
-
-<style lang="scss" global>
-  :root {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  }
-
-  body {
-    background: #333;
-  }
-</style>
+<Footer />
