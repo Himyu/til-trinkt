@@ -1,21 +1,45 @@
 <script lang="ts">
   import { Names } from "../store/Names";
-  import { Button, Input } from "sveltestrap";
+  import {
+    Button,
+    Input,
+    InputGroup,
+    InputGroupText,
+    InputGroupAddon,
+  } from "sveltestrap";
 
   let value: string = "";
 
   function addName(e: Event) {
     e.preventDefault();
 
-    if (value != "") {
-      $Names = [...$Names, value];
-    }
+    if (!value) return;
+
+    if ($Names.includes(value)) return;
+
+    $Names = [...$Names, value];
+
+    value = "";
   }
 </script>
 
 <div>
   <form on:submit={addName} class="p-4">
-    <Input type="text" {value} placeholder="Name ..." required class="mb-3" />
-    <Button color="success" block>Hinzufügen</Button>
+    <InputGroup class="mb-3">
+      <Input type="text" bind:value placeholder="Name ..." required />
+      <InputGroupAddon addonType="append">
+        <InputGroupText class="addBtn">
+          <Input addon type="submit" value="+" />
+        </InputGroupText>
+      </InputGroupAddon>
+    </InputGroup>
   </form>
 </div>
+
+<style lang="scss" global>
+  .addBtn {
+    background-color: var(--success);
+    border-color: var(--success);
+    color: var(--white);
+  }
+</style>
