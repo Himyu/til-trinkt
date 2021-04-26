@@ -8,7 +8,7 @@
     e.preventDefault();
 
     if (value != "") {
-      Names.add(value);
+      $Names = [...$Names, value];
     }
   }
 </script>
