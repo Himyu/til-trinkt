@@ -13,7 +13,7 @@
 </script>
 
 {#if $Names.length > 1}
-  <Button color="primary" class="mb-3" block on:click={getNext} id="randomBtn">
-    Next <Icon class="ml-2" icon={faRandom} />
+  <Button color="primary" block on:click={getNext} id="randomBtn">
+    Rollen <Icon class="ml-2" icon={faRandom} />
   </Button>
 {/if}

@@ -14,7 +14,7 @@
 <Alert />
 <main class="p-4 text-white flex-grow-1 d-flex flex-column h-100">
   <NameList />
-  <div class={$ChronicStore.length < 1 ? "flex my-auto" : ""}>
+  <div class={$ChronicStore.length < 2 ? "flex my-auto" : ""}>
     <Input />
     <CurrentPick />
     <Generator />

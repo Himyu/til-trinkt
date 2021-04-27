@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Alert } from "sveltestrap";
 
-  $: visible = true;
+  $: visible = false;
 </script>
 
 <Alert color="info" isOpen={visible} toggle={() => (visible = false)}>
