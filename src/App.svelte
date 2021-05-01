@@ -8,7 +8,7 @@
   import Chronic from "./lib/Chronic.svelte";
   import Footer from "./lib/Footer.svelte";
   import { Chronic as ChronicStore } from "./store/Chronic";
-  import { ShowNames, Names } from "./store/Names";
+  import { ShowNames } from "./store/Names";
 </script>
 
 <Alert />
@@ -17,8 +17,8 @@
   <NameList />
   <div
     class={$ChronicStore.length < 2
-      ? $ShowNames && $Names.length > 0
-        ? "flex mb-auto mt-4"
+      ? $ShowNames
+        ? "flex mb-auto"
         : "flex my-auto"
       : ""}
   >

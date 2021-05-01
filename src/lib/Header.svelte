@@ -1,7 +1,14 @@
 <script lang="ts">
   import Icon from "./Icon.svelte";
-  import { ShowNames } from "../store/Names";
+  import { ShowNames, Names } from "../store/Names";
   import { faUsers, faTimes } from "@fortawesome/free-solid-svg-icons";
+
+  function showNames() {
+    if ($ShowNames) $ShowNames = false;
+    else if (!$ShowNames && $Names.length > 0) {
+      $ShowNames = true;
+    }
+  }
 </script>
 
 <header class="m-3 p-3 text-white">
@@ -11,7 +18,7 @@
       class="test"
       size="25px"
       icon={$ShowNames ? faTimes : faUsers}
-      on:click={() => ($ShowNames = !$ShowNames)}
+      on:click={showNames}
     />
   </div>
 </header>
