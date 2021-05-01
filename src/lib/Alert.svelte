@@ -23,7 +23,7 @@
 
 <STAlert
   color={$Alert.color}
-  isOpen={true}
+  isOpen={visible}
   toggle={() => (visible = false)}
   class="floating-alert"
 >
