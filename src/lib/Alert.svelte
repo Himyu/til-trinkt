@@ -23,10 +23,10 @@
 
 <STAlert
   color={$Alert.color}
-  isOpen={visible}
+  isOpen={true}
   toggle={() => (visible = false)}
   class="floating-alert"
 >
-  <h4 class="alert-heading">{$Alert.heading}</h4>
+  <h4 class="alert-heading mb-1">{$Alert.heading}</h4>
   {$Alert.text || ""}
 </STAlert>
