@@ -1,4 +1,7 @@
 <script>
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
+
   export let icon;
   let path = [];
   let classes = "";
@@ -8,7 +11,7 @@
   export let fill = "currentColor";
   export let size = "1em";
   export let title = "";
-  $: classes = "fa" + " " + ($$props.class ? $$props.class : "");
+  $: classes = "fa" + " " + ($$props.class || "");
 </script>
 
 <i class={classes} {title} on:click>

@@ -15,21 +15,20 @@ body {
   min-height: 100vh;
 }
 
+@media (min-width: 800px) {
+  #app {
+    margin: 10vh 20vw;
+    width: calc(100% - 40vw);
+    min-height: calc(100vh - 20vh);
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.25);
+  }
+}
+
 .input-group > .custom-file,
 .input-group > .custom-select,
 .input-group > .form-control,
 .input-group > .form-control-plaintext {
   height: auto;
-}
-
-#addBtn {
-  background-color: var(--success);
-  border-color: var(--success);
-  color: var(--white);
-}
-
-#addBtn i svg {
-  margin-top: 0;
 }
 
 .form-control {
@@ -52,4 +51,11 @@ body {
 
 .card-c-bg {
   background-color: rgba(52, 58, 64, 0.25) !important;
+}
+
+.floating-alert {
+  top: 2.5rem;
+  width: calc(100% - 2rem);
+  margin: 1rem;
+  position: absolute;
 }

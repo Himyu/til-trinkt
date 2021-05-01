@@ -1,7 +1,7 @@
 <script lang="ts">
   import Icon from "./Icon.svelte";
   import { ShowNames } from "../store/Names";
-  import { faUsers } from "@fortawesome/free-solid-svg-icons";
+  import { faUsers, faTimes } from "@fortawesome/free-solid-svg-icons";
 </script>
 
 <header class="m-3 p-3 text-white">
@@ -10,7 +10,7 @@
     <Icon
       class="test"
       size="25px"
-      icon={faUsers}
+      icon={$ShowNames ? faTimes : faUsers}
       on:click={() => ($ShowNames = !$ShowNames)}
     />
   </div>

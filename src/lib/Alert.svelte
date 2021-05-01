@@ -1,9 +1,32 @@
 <script lang="ts">
-  import { Alert } from "sveltestrap";
+  import { Alert as STAlert } from "sveltestrap";
+  import { Alert } from "../store/Alert";
+  import type { DisplayError } from "../../types/DisplayError";
+  import { onDestroy } from "svelte";
 
-  $: visible = false;
+  export let ms = 3000;
+  let visible: boolean;
+  let timeout: ReturnType<typeof setTimeout>;
+
+  const onMessageChange = (alert: DisplayError, ms: number) => {
+    clearTimeout(timeout);
+    if (!alert.show) {
+      visible = false;
+    } else {
+      visible = true;
+      if (ms > 0) timeout = setTimeout(() => (visible = false), ms);
+    }
+  };
+  $: onMessageChange($Alert, ms);
+  onDestroy(() => clearTimeout(timeout));
 </script>
 
-<Alert color="info" isOpen={visible} toggle={() => (visible = false)}>
-  I am an alert and I can be dismissed!
-</Alert>
+<STAlert
+  color={$Alert.color}
+  isOpen={visible}
+  toggle={() => (visible = false)}
+  class="floating-alert"
+>
+  <h4 class="alert-heading">{$Alert.heading}</h4>
+  {$Alert.text || ""}
+</STAlert>

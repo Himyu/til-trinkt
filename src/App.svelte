@@ -8,13 +8,20 @@
   import Chronic from "./lib/Chronic.svelte";
   import Footer from "./lib/Footer.svelte";
   import { Chronic as ChronicStore } from "./store/Chronic";
+  import { ShowNames, Names } from "./store/Names";
 </script>
 
-<Header />
 <Alert />
+<Header />
 <main class="p-4 text-white flex-grow-1 d-flex flex-column h-100">
   <NameList />
-  <div class={$ChronicStore.length < 2 ? "flex my-auto" : ""}>
+  <div
+    class={$ChronicStore.length < 2
+      ? $ShowNames && $Names.length > 0
+        ? "flex mb-auto mt-4"
+        : "flex my-auto"
+      : ""}
+  >
     <Input />
     <CurrentPick />
     <Generator />

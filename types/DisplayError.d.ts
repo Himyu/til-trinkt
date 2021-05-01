@@ -4,5 +4,5 @@ export type DisplayError = {
   show: boolean
   color: Color
   heading: string
-  text: string
+  text?: string
 }
