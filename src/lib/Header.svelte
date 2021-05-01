@@ -6,7 +6,7 @@
 
 <header class="m-3 p-3 text-white">
   <div class="d-flex flex-row w-100">
-    <h1 class="mr-auto mb-0">Til Trnkt</h1>
+    <h1 class="mr-auto mb-0">Til Trinkt</h1>
     <Icon
       class="test"
       size="25px"
