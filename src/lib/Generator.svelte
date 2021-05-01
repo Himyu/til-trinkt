@@ -29,7 +29,7 @@
   <Button color="primary" block on:click={getNext} id="randomBtn">
     Rollen <Icon class="ml-2" icon={faRandom} />
   </Button>
-  {#if $Chronic.length >= 1}
+  {#if $Chronic.length >= 10}
     <Button
       color="link"
       size="sm"

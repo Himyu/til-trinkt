@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "deploy": "npm run build && firebase deploy --only hosting"
   },
   "devDependencies": {
     "@rollup/plugin-json": "^4.1.0",
