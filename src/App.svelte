@@ -11,6 +11,10 @@
   import { ShowNames } from "./store/Names";
 </script>
 
+<svelte:head>
+  <meta name="theme-color" content="#bc4e9c" />
+</svelte:head>
+
 <Alert />
 <Header />
 <main class="p-4 text-white flex-grow-1 d-flex flex-column h-100">
